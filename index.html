@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>ATM 업무관리</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+    }
+    h1 { color: #2563eb; }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    li { margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>ATM WORKSPACE</h1>
+    <p>나의 첫 번째 업무관리 웹사이트</p>
+    <h3>업무 목록</h3>
+    <ul id="tasks">
+      <li>광고주 미팅 준비</li>
+      <li>캠페인 제안서 작성</li>
+    </ul>
+    <button onclick="addTask()">+ 업무 추가</button>
+  </div>
+
+  <script>
+    function addTask() {
+      const task = prompt("추가할 업무를 입력하세요.");
+      if (!task || !task.trim()) return;
+
+      const li = document.createElement("li");
+      li.textContent = task;
+      document.getElementById("tasks").appendChild(li);
+    }
+  </script>
+</body>
+</html>
